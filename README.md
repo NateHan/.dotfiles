@@ -2,6 +2,13 @@
 
 inspiration: https://driesvints.com/blog/getting-started-with-dotfiles/ 
 
+#### 1. Install Apple's Command Line Tools, (needed for Git and Homebrew.)
+
+```zsh
+xcode-select --install
+```
+<br>
+
 ## something about symlinks
 
 ## Clone this repo
