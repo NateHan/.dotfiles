@@ -1,5 +1,9 @@
 # Instructions for starting a new machine
 
+inspiration: https://driesvints.com/blog/getting-started-with-dotfiles/ 
+
+## something about symlinks
+
 ## Clone this repo
 
 ## Install home brew
