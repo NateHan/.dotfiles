@@ -7,11 +7,18 @@ inspiration: https://driesvints.com/blog/getting-started-with-dotfiles/
 ```zsh
 xcode-select --install
 ```
-<br>
+
+#### 2. Set up Git
+
+I like to generate a new SSH key for each reboot. Follow [Github's instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+#### 3. Import your preferred Bash profile from this repo
+
+Terminal > press `command + ','` > click the circle with three dots and select "import"
 
 ## something about symlinks
 
-## Clone this repo
+
 
 ## Install home brew
 
