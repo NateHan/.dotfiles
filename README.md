@@ -10,17 +10,33 @@ xcode-select --install
 
 #### 2. Set up Git
 
-I like to generate a new SSH key for each reboot. Follow [Github's instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- I like to generate a new SSH key for each reboot. Follow [Github's instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
+- Clone this repo to the desired location: 
+
+```
+git clone git@github.com:NateHan/.dotfiles.git
+```
 #### 3. Import your preferred Bash profile from this repo
 
 Terminal > press `command + ','` > click the circle with three dots and select "import"
 
-## something about symlinks
+#### 4. Create symlinks to files from this repo to where they belong
+
+```
+ln -s ~/GitRepos/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/GitRepos/.dotfiles/.gitconfig ~/.gitconfig 
+```
 
 
+#### 5. Install Homebrew and then everything in the Brewfile
 
-## Install home brew
+```
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# install brews
+brew bundle --file ~/.dotfiles/Brewfile
+```
 
 
 ## Install mackup
