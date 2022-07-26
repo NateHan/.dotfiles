@@ -17,28 +17,33 @@ xcode-select --install
 ```
 git clone git@github.com:NateHan/.dotfiles.git
 ```
-#### 3. Import your preferred Bash profile from this repo
+
+#### 3. Set your Mac OS Defaults using the .macos file
+
+```
+source ~/Gitrepos/.dotfiles/.macos
+```
+
+#### 4. Import your preferred Bash profile from this repo
 
 Terminal > press `command + ','` > click the circle with three dots and select "import"
 
-#### 4. Create symlinks to files from this repo to where they belong
+#### 5. Create symlinks to files from this repo to where they belong
 
 ```
 ln -s ~/GitRepos/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/GitRepos/.dotfiles/.gitconfig ~/.gitconfig 
 ```
 
-
-#### 5. Install Homebrew and then everything in the Brewfile
+#### 6. Install Homebrew and then everything in the Brewfile
 
 ```
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# install brews
-brew bundle --file ~/.dotfiles/Brewfile
+# install brews, you may have to run this command from the same dir where the brew file is located
+brew bundle --file ~/GitRepos/.dotfiles/Brewfile
 ```
 
-
-## Install mackup
+#### 7. Install mackup
 1. Follow the installation directions https://github.com/lra/mackup#quickstart
 2. make a copy of `.mackup.cfg` from this repo to your home directory, then run `mackup restore` 

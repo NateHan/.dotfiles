@@ -1,4 +1,14 @@
 
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+export GOPRIVATE="formation.engineering"
+export GONOPROXY="formation.engineering"
+export GONOSUMDB="formation.engineering"
+
+export PATH=$PATH:/opt/homebrew/bin
+
 alias grep='grep --color=auto'
 
 alias valk-ingestor-box='cd ~; ssh -i ./.aws/valk-production-rsa admin@ingester.valkyrie-prod.takt.cc'
