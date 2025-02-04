@@ -1,24 +1,27 @@
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/nathanhanak/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nathanhanak/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-export GOPRIVATE="formation.engineering"
-export GONOPROXY="formation.engineering"
-export GONOSUMDB="formation.engineering"
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/nathanhanak/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nathanhanak/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-export PATH=$PATH:/opt/homebrew/bin
+# Updated export
+export CERT_PATH=$(python -m certifi)
 
-alias grep='grep --color=auto'
+# This is all the same
+export SSL_CERT_FILE=${CERT_PATH}
+export SSL_CERT_DIR=${CERT_DIR}
+export REQUESTS_CA_BUNDLE=${CERT_PATH}
+export NODE_EXTRA_CA_CERTS=${CERT_PATH}
+export REQUESTS_CA_BUNDLE=${CERT_PATH}
+export CURL_CA_BUNDLE=${CERT_PATH}
+export AWS_CA_BUNDLE=${CERT_PATH}
 
-alias valk-ingestor-box='cd ~; ssh -i ./.aws/valk-production-rsa admin@ingester.valkyrie-prod.takt.cc'
+export JAVA_HOME="$(brew --prefix)/opt/openjdk@11"
+export PATH="$JAVA_HOME/bin:$PATH"
 
-alias valk-emr-ssh='_SshIntoEMR(){ ssh -i ./.aws/valk-production-rsa hadoop@"$1";}; _SshIntoEMR'
-
-alias valk-prod="aws-okta exec valkyrie-prod -- /bin/zsh"
-alias platform-dev="aws-okta exec formation-platform-dev -- /bin/zsh"
-alias platform-prod="aws-okta exec formation-platform-prod -- /bin/zsh"
-
-
-if [ -e /Users/nathan.hanak/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/nathan.hanak/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-echo 'finished executing ~/.zshrc' 
+echo 'finished executing ~/.zshrc startup script'
